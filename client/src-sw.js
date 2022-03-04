@@ -30,6 +30,7 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 registerRoute(
   // here we define the callbak function that will filter the requests we want to cache
   ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
+  // ({ request }) => request.destination === 'image',
   new CacheFirst({
     //name of the cache storage
     cacheName: 'asset-cache',
@@ -37,6 +38,9 @@ registerRoute(
       //this plugin will cache responses with these headers to a maximun-age of 30 day
       new CacheableResponsePlugin({
         statuses: [0, 200],
+      }),
+      new ExpirationPlugin({
+        maxAgeSeconds: 30 * 24 * 60 * 60,
       }),
     ]})
 );
