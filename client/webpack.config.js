@@ -12,7 +12,8 @@ module.exports = () => {
     //entry point for files
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js',
+      editor: './src/js/editor.js'
     },
     // output for our bundles
     output: {
@@ -23,7 +24,7 @@ module.exports = () => {
       // webpack plugin that generates our html file and injects our bundles
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Webpack plugin'
+        title: 'Text editor'
       }),
 
       // injects our custom service worker

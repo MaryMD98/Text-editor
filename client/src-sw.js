@@ -29,7 +29,7 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 // TODO: Implement asset caching
 registerRoute(
   // here we define the callbak function that will filter the requests we want to cache
-  // ({ request }) => ['style', 'script'].includes(request.destination),
+  // ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
   ({ request }) => request.destination === 'image',
   new CacheFirst({
     //name of the cache storage
