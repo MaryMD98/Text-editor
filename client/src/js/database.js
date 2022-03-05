@@ -26,7 +26,7 @@ export const putDb = async (content) => {
   // open up the desired object store
   const store = tx.objectStore('jate');
   // use the put method on the store and pass in the content
-  const request = store.put({value: content}); // {id:1, value:content}
+  const request = store.put({id:1, value: content}); // {id:1, value:content} {jate: content})
   // get information of the request
   const result = await request;
   // if request is false send error code
@@ -45,7 +45,7 @@ export const getDb = async () => {
   //open up the desired object store
   const store = tx.objectStore('jate');
   // use the getall method on the store and get all data on the database
-  const request = store.getAll(); // get(1)
+  const request = store.get(1); // get(1)
   // get confirmation of the request
   const result = await request;
   // if request is false send error code

@@ -23,7 +23,7 @@ module.exports = () => {
       // webpack plugin that generates our html file and injects our bundles
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Just Another Text Editor'
+        title: 'Webpack plugin'
       }),
 
       // injects our custom service worker
@@ -37,15 +37,15 @@ module.exports = () => {
         fingerprints: false,
         inject: true,
         name: 'Just Another Text Editor',
-        short_name: 'Editor',
-        description: 'Text Editor!',
-        background_color: '#225ca3', //'#7eb4e2',
-        theme_color: '#225ca3', //'#7eb4e2',
+        short_name: 'Text Editor',
+        description: 'Takes notes with JavaScript syntax highlighting',
+        background_color: '#225ca3', 
+        theme_color: '#225ca3', 
         start_url: '/',
         publicPath: '/',
         icons: [
           {
-            src: path.resolve('src/images/logo.png'),
+            src: path.resolve('./src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
