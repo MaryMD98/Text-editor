@@ -20,7 +20,7 @@ const pageCache = new CacheFirst({
 });
 
 warmStrategyCache({
-  urls: ['/index.html', '/'],
+  urls: ['./index.html', '/'],
   strategy: pageCache,
 });
 
@@ -29,8 +29,8 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 // TODO: Implement asset caching
 registerRoute(
   // here we define the callbak function that will filter the requests we want to cache
-  ({ request }) => ['style', 'script'].includes(request.destination),
-  // ({ request }) => request.destination === 'image',
+  // ({ request }) => ['style', 'script'].includes(request.destination),
+  ({ request }) => request.destination === 'image',
   new CacheFirst({
     //name of the cache storage
     cacheName: 'asset-cache',
