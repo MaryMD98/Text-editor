@@ -7,7 +7,6 @@ window.addEventListener('beforeinstallprompt', (event) => {
     window.deferredPrompt = event;
     //remove the hidden class from the button
     butInstall.classList.toggle('hidden', false);
-    // butInstall.style.visibility = 'visible';
 });
 
 // TODO: Implement a click event handler on the `butInstall` element
@@ -19,9 +18,6 @@ butInstall.addEventListener('click', async () => {
     //Reset the deffered prompt variable, it can only be used once.
     window.deferredPrompt = null;
     butInstall.classList.toggle('hidden', true);
-
-    // butInstall.setAttribute('disabled', true);
-    // butInstall.textContent = 'Installed!';
 });
 
 // TODO: Add an handler for the `appinstalled` event

@@ -32,7 +32,7 @@ export const putDb = async (content) => {
   // if request is false send error code
   if(!result){console.error('putDb not implemented'); return;}
   // if success then console log that result as successful
-  console.log('🚀 - data saved to the database', result);// {result.value}
+  console.log('🚀 - data saved to the database', result);
 };
 
 // TODO: Add logic for a method that gets all the content from the database
@@ -52,8 +52,8 @@ export const getDb = async () => {
   // if request is false send error code
   if(!result){console.error('getDb not implemented'); return;}
   // if successs then console log the result and return result
-  console.log('result from database', result);// result.value
-  // return result?.value;
+  console.log('result from database', result);
+  // return result.value;
   return result.value;
 };
 
