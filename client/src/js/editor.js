@@ -29,6 +29,8 @@ export default class {
       console.log('this is inside data');
       console.log(data);
       this.editor.setValue(data || localData || header);
+      // this.editor.setValue(data || localData);
+      // this.editor.setValue(header);
     });
 
     this.editor.on('change', () => {
