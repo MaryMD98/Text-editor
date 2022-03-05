@@ -21,13 +21,14 @@ export const putDb = async (content) => {
   // Create a connection to the database and version we want to use
   const jateDB = await openDB('jate', 1);
   // Create a new transaction and specify the database and data privileges
-  const tx = jateDB.transaction('jate', 'readwrite');
+  // const tx = jateDB.transaction('jate', 'readwrite');
   // open up the desired object store
-  const store = tx.objectStore('jate');
+  // const store = tx.objectStore('jate');
   // use the put method on the store and pass in the content
-  const request = store.put({id:1 , value: content});
+  // const request = store.put({id:1 , value: content});
   // get information of the request
-  const result = await request;
+  // const result = await request;
+  const result = await jateDB.transaction('jate', 'readwrite').objectStore('jate').put({id:1 , value: content});
   // if request is false send error code
   if(!result){console.error('putDb not implemented'); return;}
   // if success then console log that result as successful
@@ -40,13 +41,14 @@ export const getDb = async () => {
   // Create a connection to the database and version we want to use
   const jateDB = await openDB('jate', 1);
   // Create a new transaction and specify the database and data privileges
-  const tx = jateDB.transaction('jate', 'readonly');
+  // const tx = jateDB.transaction('jate', 'readonly');
   //open up the desired object store
-  const store = tx.objectStore('jate');
+  // const store = tx.objectStore('jate');
   // use the getall method on the store and get all data on the database
-  const request = store.get(1); 
+  // const request = store.get(1); 
   // get confirmation of the request
-  const result = await request;
+  // const result = await request;
+  const result = await jateDB.transaction('jate', 'readonly').objectStore('jate').get(1);
   // if request is false send error code
   if(!result){console.error('getDb not implemented'); return;}
   // if successs then console log the result and return result
