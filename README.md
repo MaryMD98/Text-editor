@@ -24,7 +24,7 @@ To deploy the application, I am using Heroku. Here is the Link to the deployment
 * [Questions](#questions)
 
 ## [Installation](#installation)
-To initialie, after cloning the repo, run the following command.
+To initialize, after cloning the repo, run the following command.
 
     npm run start 
 
@@ -37,9 +37,17 @@ To run tests, run the following command
 
 This is a simple text editor application that can be downloaded and installed on the desktop. The application also runs offline.
 
-### Screenshot of Employee Tracker Comand Lines:
-![image of ](./screenshots/Screenshot1.png)
-![image of ](./screenshots/Screenshot2.png)
+### Screenshot of Text Editor application:
+#### At the start of the application
+
+![image of start of app](./screenshots/Screenshot1.png)
+
+#### After adding some data on the editor
+![image of adding data](./screenshots/Screenshot3.png)
+
+#### Text Editor downloaded to desktop
+![image of dowloaded app](./screenshots/Screenshot2.png)
+
 
 ## [License](#license)
 
